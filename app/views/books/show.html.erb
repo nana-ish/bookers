@@ -1,7 +1,14 @@
-<p>Book was successfully created.<p>
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+<% end %>
 
-  <p> Title: <span><%=@book.title %> </span> </p>
-  <p> Body: <span><%=@book.body %> </span> </p>
+  <p>
+    <strong> Title: </strong><%=@book.title %>
+  </p>
+
+  <p>
+    <strong>Body:</strong> <%=@book.body %>
+  </p>
 
   <span><%= link_to "Edit",edit_book_path(@book) %></span>
   <span>|<span>
